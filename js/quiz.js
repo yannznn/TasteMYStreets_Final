@@ -34,10 +34,10 @@
         options: [
           "Laksa Johor",
           "Otak-otak",
-          "Mee Rebus Johor",
-          "Murtabak"
+          "Murtabak",
+		  "Mee Rebus Johor"
         ],
-        correct: 4
+        correct: 2
       },
       {
         question: "Which variety of Laksa does not exist?",
@@ -47,7 +47,7 @@
           "Assam Laksa",
           "Laksa Penang"
         ],
-        correct: 4
+        correct: 3
       }
     ];
 
