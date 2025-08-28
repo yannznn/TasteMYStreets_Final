@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <title>Contact Us</title>
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+  <link href="https://fonts.googleapis.com/css?family=Poppins:400,600,700&display=swap" rel="stylesheet">
+  <link href="css/font-awesome.min.css" rel="stylesheet" />
+  <link href="css/style.css" rel="stylesheet" />
+  <link href="css/responsive.css" rel="stylesheet" />
+</head>
+<body class="sub_page">
+  <div class="hero_area">
+    <header class="header_section">
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg custom_nav-container">
+          <a class="navbar-brand" href="index.html"><span>TasteMYStreets</span></a>
+
+          <div>
+            <!-- Auth UI: same on every page -->
+             <div class="User_option d-flex align-items-center">
+              <!-- Welcome (hidden by default) -->
+               <div id="welcomeText" class="mr-3" style="display:none;">
+                Welcome, <strong id="who"></strong>
+              </div>
+
+              <!-- Login (hidden by default; shown when logged out) -->
+               <a id="loginLink" href="login.html" style="display:none;">
+                <i class="fa fa-user" aria-hidden="true"></i>
+                <span>Login</span>
+              </a>
+
+              <!-- Logout (hidden by default; shown when logged in) -->
+               <button id="logoutBtn" class="btn btn-sm btn-outline-light ml-2" style="display:none;">
+                Logout
+              </button>
+
+              <!-- (optional) search, keep or remove as you like -->
+               <form class="form-inline ml-3 d-none d-lg-flex">
+                <input type="search" placeholder="Search" />
+                <button class="btn nav_search-btn" type="submit">
+                  <i class="fa fa-search" aria-hidden="true"></i>
+                </button>
+              </form>
+            </div>
+
+            <!-- Menu (unchanged, but add auth-link to protected pages) -->
+             <div class="custom_menu-btn">
+              <button onclick="openNav()">
+                <img src="images/menu.png" alt="">
+              </button>
+            </div>
+            
+            <div id="myNav" class="overlay">
+              <div class="overlay-content">
+                <a href="index.html">Home</a>
+                <a href="discover.html" class="auth-link">Discover Street food</a>
+                <a href="rank.html">Top 10 street food spots</a>
+                <a href="quiz.html" class="auth-link">Quiz</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact Us Page</a>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+  </div>
+
+  <section class="about_section layout_padding">
+    <div class="container">
+      <div class="col-md-11 col-lg-10 mx-auto">
+        <div class="heading_container heading_center">
+          <h2>Contact Us</h2>
+          <p>We’d love to hear from you! Fill out the form below.</p>
+        </div>
+        <div class="box">
+          <div class="detail-box">
+            <form id="contactForm" autocomplete="off">
+              <div class="form-group">
+                <label for="contactName">Name</label>
+                <input type="text" class="form-control" id="contactName" name="name" required>
+              </div>
+              <div class="form-group">
+                <label for="contactEmail">Email</label>
+                <input type="email" class="form-control" id="contactEmail" name="email" required pattern="[^@\s]+@[^@\s]+\.[^@\s]+">
+              </div>
+              <div class="form-group">
+                <label for="contactMessage">Message/Feedback</label>
+                <textarea class="form-control" id="contactMessage" name="message" rows="4" required></textarea>
+              </div>
+              <button type="submit" class="btn-box discover-btn" style="margin-top:16px;">Send Message</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Scripts -->
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="js/bootstrap.js"></script>
+  <script src="js/custom.js"></script>
+  <script>
+    // Local Storage Integration for Contact Form
+    const form = document.getElementById('contactForm');
+    const nameInput = document.getElementById('contactName');
+    const emailInput = document.getElementById('contactEmail');
+    const messageInput = document.getElementById('contactMessage');
+
+    window.addEventListener('DOMContentLoaded', () => {
+      nameInput.value = localStorage.getItem('contact_name') || '';
+      emailInput.value = localStorage.getItem('contact_email') || '';
+      messageInput.value = localStorage.getItem('contact_message') || '';
+    });
+
+    [nameInput, emailInput, messageInput].forEach(input => {
+      input.addEventListener('input', () => {
+        localStorage.setItem('contact_name', nameInput.value);
+        localStorage.setItem('contact_email', emailInput.value);
+        localStorage.setItem('contact_message', messageInput.value);
+      });
+    });
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Thank you for your message!');
+      localStorage.removeItem('contact_name');
+      localStorage.removeItem('contact_email');
+      localStorage.removeItem('contact_message');
+      form.reset();
+    });
+  </script>
+  <script src="js/script.js" defer></script>
+</body>
+</html>

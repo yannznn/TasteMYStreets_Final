@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Login</title>
+  <link href="css/style1.css" rel="stylesheet" />
+</head>
+<body>
+  <main class="page">
+    <section class="card" aria-labelledby="loginTitle">
+      <h1 class="title" id="loginTitle">Login</h1>
+
+      <form id="loginForm" novalidate>
+        <label class="field">
+          <span>Username</span>
+          <input id="loginUsername" name="username" type="text" required />
+        </label>
+
+        <label class="field">
+          <span>Password</span>
+          <input id="loginPassword" name="password" type="password" required />
+        </label>
+
+        <button type="submit" class="btn primary">Login</button>
+        <p id="loginError" class="error" aria-live="polite"></p>
+
+        <label class="field checkbox" style="display:flex; align-items:center; gap:.5rem;">
+          <input id="rememberMe" type="checkbox" />
+          <span>Remember me</span>
+        </label>
+
+      </form>
+
+       <p class="hint">No account? <a href="./signup.html">Sign up</a></p>
+    </section>
+  </main>
+
+  <script src="js/script.js" defer></script>
+</body>
+</html>

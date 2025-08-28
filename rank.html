@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <title>Top 10 Malaysian Street Food Spots</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" />
+  <link href="https://fonts.googleapis.com/css?family=Poppins:400,600,700&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" />
+  <link href="https://fonts.googleapis.com/css?family=Poppins:400,600,700&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="css/rank.css">
+  
+</head>
+<body class="sub_page">
+  <div class="hero_area">
+    <header class="header_section">
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg custom_nav-container">
+          <a class="navbar-brand" href="index.html">
+            <span>TasteMYStreets</span>
+          </a>
+
+          <div>
+            <!-- USER / AUTH UI -->
+            <div class="User_option d-flex align-items-center gap-3">
+              <!-- Welcome text (shown when logged in) -->
+              <div id="welcomeText" class="mr-3" style="display:none;">
+                Welcome, <strong id="who"></strong>
+              </div>
+
+              <!-- Login link (shown when logged out) -->
+              <a id="loginLink" href="login.html" style="display:none;">
+                <i class="fa fa-user" aria-hidden="true"></i>
+                <span>Login</span>
+              </a>
+
+              <!-- Logout button (shown when logged in) -->
+              <button id="logoutBtn" class="btn btn-sm btn-outline-light" style="display:none;">
+                Logout
+              </button>
+
+              <!-- optional search (styled into an icon by your global CSS) -->
+              <form class="form-inline ml-3">
+                <!-- search removed -->
+              </form>
+            </div>
+
+            <!-- MENU BUTTON (same image/icon as discover) -->
+            <div class="custom_menu-btn">
+              <button onclick="openNav()">
+                <img src="images/menu.png" alt="">
+              </button>
+            </div>
+
+            <!-- OVERLAY MENU -->
+            <div id="myNav" class="overlay">
+              <div class="overlay-content">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                <a href="index.html">Home</a>
+                <a href="discover.html" class="auth-link">Discover Street food</a>
+                <a href="rank.html">Top 10 street food spots</a>
+                <a href="quiz.html" class="auth-link">Quiz</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact Us Page</a>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-content">
+      <h1 class="hero-title">Top 10 Street Food Spots</h1>
+      <p class="hero-subtitle">Discover Malaysia's most legendary street food destinations where flavors come alive and culinary traditions thrive</p>
+    </div>
+  </section>
+
+  <!-- Spots Section -->
+  <section class="spots-section">
+    <div class="container">
+      <h2 class="section-title">Must-Visit Food Havens</h2>
+      <div class="spots-grid">
+        
+        <!-- Spot 1: Gurney Drive -->
+        <div class="spot-card" onclick="showSpotDetails('gurney-drive')">
+          <div class="spot-rank">1</div>
+          <img src="https://www.tripsavvy.com/thmb/9Jzh2oEw1s_agOXhvKH-SXEOX34=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/gurney-drive-street-food-penang-59e9aa52d088c00011c80b3e.jpg" alt="Gurney Drive" class="spot-image">
+          <div class="spot-content">
+            <h3 class="spot-name">
+              <i class="fas fa-crown"></i>
+              Gurney Drive Food Court
+            </h3>
+            <p class="spot-location">
+              <i class="fas fa-map-marker-alt"></i>
+              George Town, Penang
+            </p>
+            <p class="spot-description">The most famous street food destination in Malaysia, offering an incredible variety of Penang's signature dishes with stunning seaside views.</p>
+            <div class="spot-highlights">
+              <span class="highlight-tag">Char Koay Teow</span>
+              <span class="highlight-tag">Assam Laksa</span>
+              <span class="highlight-tag">Cendol</span>  
+            </div>
+            <div class="spot-rating">
+              <div class="rating-stars">★★★★★</div>
+              <span>4.8/5</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Spot 2: Jalan Alor -->
+        <div class="spot-card" onclick="showSpotDetails('jalan-alor')">
+          <div class="spot-rank">2</div>
+          <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/09/dd/72/22/jalan-alor.jpg?w=900&h=500&s=1" alt="Jalan Alor" class="spot-image">
+          <div class="spot-content">
+            <h3 class="spot-name">
+              <i class="fas fa-city"></i>
+              Jalan Alor
+            </h3>
+            <p class="spot-location">
+              <i class="fas fa-map-marker-alt"></i>
+              Bukit Bintang, Kuala Lumpur
+            </p>
+            <p class="spot-description">KL's most vibrant night food street, buzzing with energy and offering diverse Chinese and local Malaysian delicacies until the early hours.</p>
+            <div class="spot-highlights">
+              <span class="highlight-tag">Night Market</span>
+              <span class="highlight-tag">BBQ Seafood</span>
+              <span class="highlight-tag">Hokkien Mee</span>
+              <span class="highlight-tag">24/7 Dining</span>
+            </div>
+            <div class="spot-rating">
+              <div class="rating-stars">★★★★★</div>
+              <span>4.7/5</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Spot 3: Ipoh Old Town -->
+        <div class="spot-card" onclick="showSpotDetails('ipoh-old-town')">
+          <div class="spot-rank">3</div>
+          <img src="https://sethlui.com/wp-content/uploads/2023/02/Ong-Kee-800x600.jpg" alt="Ipoh Old Town" class="spot-image">
+          <div class="spot-content">
+            <h3 class="spot-name">
+              <i class="fas fa-building"></i>
+              Ipoh Old Town
+            </h3>
+            <p class="spot-location">
+              <i class="fas fa-map-marker-alt"></i>
+              Ipoh, Perak
+            </p>
+            <p class="spot-description">Historic town center famous for its bean sprouts, white coffee, and traditional kopitiam culture in charming colonial buildings.</p>
+            <div class="spot-highlights">
+              <span class="highlight-tag">Bean Sprouts</span>
+              <span class="highlight-tag">White Coffee</span>
+              <span class="highlight-tag">Hor Fun</span>
+              <span class="highlight-tag">Heritage</span>
+            </div>
+            <div class="spot-rating">
+              <div class="rating-stars">★★★★★</div>
+              <span>4.6/5</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Spot 4: Kuching Waterfront -->
+        <div class="spot-card" onclick="showSpotDetails('kuching-waterfront')">
+          <div class="spot-rank">4</div>
+          <img src="https://d34vm3j4h7f97z.cloudfront.net/optimized/3X/a/6/a66a9d8831a72be72944cabe6e4f06a3ab11953f_2_666x500.jpeg" alt="Kuching Waterfront" class="spot-image">
+          <div class="spot-content">
+            <h3 class="spot-name">
+              <i class="fas fa-water"></i>
+              Kuching Waterfront Bazaar
+            </h3>
+            <p class="spot-location">
+              <i class="fas fa-map-marker-alt"></i>
+              Kuching, Sarawak
+            </p>
+            <p class="spot-description">Riverside food haven showcasing authentic Sarawakian cuisine with beautiful river views and unique Borneo flavors.</p>
+            <div class="spot-highlights">
+              <span class="highlight-tag">Sarawak Laksa</span>
+              <span class="highlight-tag">Kolo Mee</span>
+              <span class="highlight-tag">River Views</span>
+              <span class="highlight-tag">Local Culture</span>
+            </div>
+            <div class="spot-rating">
+              <div class="rating-stars">★★★★☆</div>
+              <span>4.1/5</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Spot 5: Melaka Jonker Street -->
+        <div class="spot-card" onclick="showSpotDetails('jonker-street')">
+          <div class="spot-rank">5</div>
+          <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0c/43/21/a1/the-jonker-street-night.jpg?w=900&h=500&s=1" alt="Jonker Street" class="spot-image">
+          <div class="spot-content">
+            <h3 class="spot-name">
+              <i class="fas fa-landmark"></i>
+              Jonker Street Night Market
+            </h3>
+            <p class="spot-location">
+              <i class="fas fa-map-marker-alt"></i>
+              Melaka Historic City
+            </p>
+            <p class="spot-description">UNESCO World Heritage site comes alive at night with Peranakan and Portuguese-influenced street food in a historic setting.</p>
+            <div class="spot-highlights">
+              <span class="highlight-tag">Chicken Rice Balls</span>
+              <span class="highlight-tag">Cendol</span>
+              <span class="highlight-tag">Historic Setting</span>
+              <span class="highlight-tag">Weekend Market</span>
+            </div>
+            <div class="spot-rating">
+              <div class="rating-stars">★★★★☆</div>
+              <span>4.4/5</span>
+            </div>
+          </div>
+        </div>
+
+         <!-- Spot 6: Kota Kinabalu Waterfront -->
+        <div class="spot-card" onclick="showSpotDetails('kk-waterfront')">
+          <div class="spot-rank">6</div>
+          <img src="https://c8.alamy.com/comp/2HNBNA8/night-market-kota-kinabalu-sabah-borneo-malaysia-during-chinese-new-year-celebrations-before-pandemic-2HNBNA8.jpg" alt="KK Waterfront" class="spot-image">
+          <div class="spot-content">
+            <h3 class="spot-name">
+              <i class="fas fa-ship"></i>
+              KK Waterfront Night Market
+            </h3>
+            <p class="spot-location">
+              <i class="fas fa-map-marker-alt"></i>
+              Kota Kinabalu, Sabah
+            </p>
+            <p class="spot-description">Coastal night market offering fresh seafood and unique Sabahan dishes with stunning sunset views over the South China Sea.</p>
+            <div class="spot-highlights">
+              <span class="highlight-tag">Fresh Seafood</span>
+              <span class="highlight-tag">Hinava</span>
+              <span class="highlight-tag">Sunset Views</span>
+              <span class="highlight-tag">Local Delicacies</span>
+            </div>
+            <div class="spot-rating">
+              <div class="rating-stars">★★★★☆</div>
+              <span>4.3/5</span>
+            </div>
+          </div>
+        </div>
+
+           <!-- Spot 7: SS2 Wai Sek Kai -->
+        <div class="spot-card" onclick="showSpotDetails('ss2-wai-sek-kai')">
+          <div class="spot-rank">7</div>
+          <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhn3j5NlVHULivS7GWBMJF9MpI-uPjju7LDGSBj3MR8_nvib7H_ycrkkYU5jRgKwKBx7iDueCAbSOLR5bhPWQMpQqE11VJA6n8F_Uzq_0-8-6aIeeBGcf4LRcoBPeWM0dc8hZWhssbYVvk/w1200-h630-p-k-no-nu/DSCF4323.JPG" alt="SS2 Wai Sek Kai" class="spot-image">
+          <div class="spot-content">
+            <h3 class="spot-name">
+              <i class="fas fa-utensils"></i>
+              SS2 Wai Sek Kai
+            </h3>
+            <p class="spot-location">
+              <i class="fas fa-map-marker-alt"></i>
+              Petaling Jaya, Selangor
+            </p>
+            <p class="spot-description">Hidden gem food court popular among locals, offering diverse Malaysian and Chinese dishes in a no-frills atmosphere.</p>
+            <div class="spot-highlights">
+              <span class="highlight-tag">Local Favorite</span>
+              <span class="highlight-tag">Affordable</span>
+              <span class="highlight-tag">Variety</span>
+              <span class="highlight-tag">Authentic</span>
+            </div>
+            <div class="spot-rating">
+              <div class="rating-stars">★★★★☆</div>
+              <span>4.2/5</span>
+            </div>
+          </div>
+        </div>
+
+        
+        <!-- Spot 8: Kuala Terengganu Pasar Payang -->
+        <div class="spot-card" onclick="showSpotDetails('pasar-payang')">
+          <div class="spot-rank">8</div>
+          <img src="https://cdn4.premiumread.com/?url=https://malaymail.com/malaymail/uploads/images/2023/11/01/159887.JPG&w=1000&q=100&f=jpg&t=6" alt="Pasar Payang" class="spot-image">
+          <div class="spot-content">
+            <h3 class="spot-name">
+              <i class="fas fa-fish"></i>
+              Pasar Payang
+            </h3>
+            <p class="spot-location">
+              <i class="fas fa-map-marker-alt"></i>
+              Kuala Terengganu, Terengganu
+            </p>
+            <p class="spot-description">Traditional east coast market offering the freshest seafood and authentic Terengganu specialties in a bustling local atmosphere.</p>
+            <div class="spot-highlights">
+              <span class="highlight-tag">Nasi Dagang</span>
+              <span class="highlight-tag">Keropok Lekor</span>
+              <span class="highlight-tag">Fresh Seafood</span>
+              <span class="highlight-tag">Traditional</span>
+            </div>
+            <div class="spot-rating">
+              <div class="rating-stars">★★★★☆</div>
+               <span>4/5</span>
+               </div>
+                </div>
+                 </div>
+
+        <!-- Spot 9: Kelantan Night Market -->
+        <div class="spot-card" onclick="showSpotDetails('kelantan-night-market')">
+          <div class="spot-rank">9</div>
+          <img src="https://media.gettyimages.com/id/487312461/photo/night-market-in-kota-bharu.jpg?s=1024x1024&w=gi&k=20&c=KEu8Un1U_IhO_TeV-v8d4FBedLYSwmLIzpEXI6owazg=" alt="Kelantan Night Market" class="spot-image">
+          <div class="spot-content">
+            <h3 class="spot-name">
+              <i class="fas fa-moon"></i>
+              Kota Bharu Night Market
+            </h3>
+            <p class="spot-location">
+              <i class="fas fa-map-marker-alt"></i>
+              Kota Bharu, Kelantan
+            </p>
+            <p class="spot-description">Cultural heartland's night market showcasing the most authentic Kelantanese cuisine with traditional recipes passed down generations.</p>
+            <div class="spot-highlights">
+              <span class="highlight-tag">Nasi Kerabu</span>
+              <span class="highlight-tag">Ayam Percik</span>
+              <span class="highlight-tag">Traditional</span>
+              <span class="highlight-tag">Cultural</span>
+            </div>
+            <div class="spot-rating">
+              <div class="rating-stars">★★★★☆</div>
+              <span>4.0/5</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Spot 10: Taiping Market -->
+        <div class="spot-card" onclick="showSpotDetails('taiping-market')">
+          <div class="spot-rank">10</div>
+          <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/80/e1/cf/larut-matang-hawker-centre.jpg?w=900&h=500&s=1" alt="Taiping Market" class="spot-image">
+          <div class="spot-content">
+            <h3 class="spot-name">
+              <i class="fas fa-tree"></i>
+              Taiping Larut Market
+            </h3>
+            <p class="spot-location">
+              <i class="fas fa-map-marker-alt"></i>
+              Taiping, Perak
+            </p>
+            <p class="spot-description">Historic town's charming market known for its old-school charm, traditional coffee shops, and authentic Perak specialties.</p>
+            <div class="spot-highlights">
+              <span class="highlight-tag">Heritage</span>
+              <span class="highlight-tag">Coffee Culture</span>
+              <span class="highlight-tag">Local Charm</span>
+              <span class="highlight-tag">Affordable</span>
+            </div>
+            <div class="spot-rating">
+              <div class="rating-stars">★★★★☆</div>
+              <span>3.9/5</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Spot Detail Modal -->
+  <div id="spotModal" class="spot-modal">
+    <div class="modal-content">
+      <span class="close-modal" onclick="closeSpotModal()">&times;</span>
+      <div class="modal-header">
+        <img id="modalSpotImage" src="" alt="Spot Image" class="modal-header-image">
+        <div class="modal-header-overlay">
+          <h2 id="modalSpotName" class="modal-spot-name"></h2>
+          <p id="modalSpotLocation" class="modal-spot-location"></p>
+        </div>
+      </div>
+      <div class="modal-body">
+        <div class="modal-section">
+          <h3 class="modal-section-title">
+            <i class="fas fa-info-circle"></i>
+            About This Spot
+          </h3>
+          <p id="modalSpotDescription" class="modal-section-content"></p>
+        </div>
+
+      <div class="modal-section">
+         <h3 class="modal-section-title">
+        <i class="fas fa-map"></i>
+                Location Map
+        </h3>
+        <iframe
+            id="modalSpotMap"
+            width="100%"
+            height="300"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+        </div>
+
+        
+        
+        <div class="modal-section">
+          <h3 class="modal-section-title">
+            <i class="fas fa-utensils"></i>
+            Must-Try Dishes
+          </h3>
+          <div id="modalDishesList" class="dishes-grid"></div>
+        </div>
+        
+        <div class="modal-section">
+          <h3 class="modal-section-title">
+            <i class="fas fa-clock"></i>
+            Operating Hours
+          </h3>
+          <p id="modalOperatingHours" class="modal-section-content"></p>
+        </div>
+        
+        <div class="modal-section">
+          <h3 class="modal-section-title">
+            <i class="fas fa-lightbulb"></i>
+            Insider Tips
+          </h3>
+          <p id="modalTips" class="modal-section-content"></p>
+        </div>
+        
+        <div class="modal-section">
+          <h3 class="modal-section-title">
+            <i class="fas fa-car"></i>
+            Getting There
+          </h3>
+          <p id="modalGettingThere" class="modal-section-content"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Floating Navigation -->
+  <div class="floating-nav">
+    <button class="nav-btn" onclick="scrollToTop()" title="Back to Top">
+      <i class="fas fa-arrow-up"></i>
+    </button>
+  </div>
+
+  <!-- AUTH: Login Modal -->
+<div id="loginModal" class="auth-modal" aria-hidden="true">
+  <div class="auth-modal__content" role="dialog" aria-modal="true" aria-labelledby="loginTitle">
+    <button class="auth-close" type="button" aria-label="Close" onclick="closeLoginModal()">&times;</button>
+    <h3 id="loginTitle" class="auth-title">Welcome back</h3>
+    <p class="auth-subtitle">Log in to personalize your TasteMYStreets experience.</p>
+
+    <form id="loginForm" autocomplete="on" novalidate>
+      <div class="auth-field">
+        <label for="loginName">Name</label>
+        <input id="loginName" name="name" type="text" placeholder="e.g. Aisyah" required />
+      </div>
+
+      <div class="auth-field">
+        <label for="loginEmail">Email</label>
+        <input id="loginEmail" name="email" type="email" placeholder="you@example.com" required />
+      </div>
+
+      <div class="auth-actions">
+        <label class="remember">
+          <input type="checkbox" id="rememberMe" /> Remember me
+        </label>
+        <button type="submit" class="auth-submit">Log in</button>
+      </div>
+
+      <p class="auth-hint">
+        Demo only: no real password here. In production you’d call your backend and set an HttpOnly cookie.
+      </p>
+    </form>
+  </div>
+</div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+  <link href="css/style.css" rel="stylesheet" />
+  <link href="css/style1.css" rel="stylesheet" />
+  <link rel="stylesheet" href="css/rank.css">
+  <script src="js/rank.js"></script>
+  <script src="js/script.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <title>Quiz</title>
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+  <link href="https://fonts.googleapis.com/css?family=Poppins:400,600,700&display=swap" rel="stylesheet">
+  <link href="css/font-awesome.min.css" rel="stylesheet" />
+  <link href="css/style.css" rel="stylesheet" />
+  <link href="css/style1.css" rel="stylesheet" />
+  <link href="css/quiz.css" rel="stylesheet"/>
+  <link href="css/responsive.css" rel="stylesheet" />
+
+  <style>
+  .overlay { height:0; width:100%; transition:.5s; }
+  .overlay.menu_width { height:100%; }
+  #myNav .closebtn{position:absolute;top:20px;right:45px;font-size:60px;color:#fff;text-decoration:none}
+  </style>
+</head>
+<body class="sub_page">
+  <div class="hero_area">
+    <header class="header_section">
+  <div class="container-fluid">
+    <nav class="navbar navbar-expand-lg custom_nav-container">
+      <a class="navbar-brand" href="index.html">
+        <span>TasteMYStreets</span>
+      </a>
+
+      <div>
+        <!-- AUTH UI -->
+        <div class="User_option d-flex align-items-center gap-3">
+          <!-- Welcome (when logged in) -->
+          <div id="welcomeText" class="mr-3" style="display:none;">
+            Welcome, <strong id="who"></strong>
+          </div>
+
+          <!-- Login (when logged out) -->
+          <a id="loginLink" href="login.html" style="display:none;">
+            <i class="fa fa-user" aria-hidden="true"></i>
+            <span>Login</span>
+          </a>
+
+          <!-- Logout (when logged in) -->
+          <button id="logoutBtn" class="btn btn-sm btn-outline-light" style="display:none;">
+            Logout
+          </button>
+
+          <!-- search (your global CSS turns this into the rounded icon) -->
+          <form class="form-inline ml-3">
+                <!-- search removed -->
+          </form>
+        </div>
+
+        <!-- MENU BUTTON -->
+        <div class="custom_menu-btn">
+          <button onclick="openNav()">
+            <img src="images/menu.png" alt="">
+          </button>
+        </div>
+
+        <!-- OVERLAY MENU -->
+        <div id="myNav" class="overlay">
+          <div class="overlay-content">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
+            <a href="index.html">Home</a>
+            <a href="discover.html" class="auth-link">Discover Street food</a>
+            <a href="rank.html">Top 10 street food spots</a>
+            <a href="quiz.html" class="auth-link">Quiz</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact Us Page</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>
+
+  </div>
+  <section class="about_section layout_padding">
+    <div class="container">
+      <div class="col-md-11 col-lg-10 mx-auto">
+        <div class="heading_container heading_center">
+          <h2>Quiz</h2>
+        </div>
+        <div class="box">
+          <div class="detail-box">
+            <p>Test your knowledge about Malaysia's street food!</p>
+            <button id="start-btn" class="btn">Start Quiz</button>
+          </div>
+        </div>      
+        <div id="quiz-screen" class="screen">
+          <div class="quiz-container">
+            <div class="quiz-info">
+                <span id="question-number">Question 1/5</span>
+                <span id="score">Score: 0</span>
+            </div>
+            <div class="progress-bar">
+                <div id="progress" class="progress"></div>
+            </div>            
+            <h2 id="question-text">Question text goes here</h2>
+            <div id="options-container"></div>            
+              <div style="text-align: center; margin-top: 20px;">
+                <button id="next-btn" class="btn">Next Question</button>
+              </div>        
+            <div class="storage-status" id="storage-status">
+                Session Storage: No data stored
+            </div>
+            </div>
+            </div>
+            <div id="results-screen" class="screen">
+            <h2>Quiz Results</h2>
+            
+            <div class="score-display">
+                Your Score: <span id="final-score">0</span>/<span id="total-questions">5</span>
+            </div>
+            
+            <div class="result-summary">
+                <p id="result-message">Well done!</p>
+                <p>You answered <span id="correct-answers" class="correct">0</span> questions correctly and <span id="incorrect-answers" class="incorrect">0</span> questions incorrectly.</p>
+            </div>
+            
+            <div style="text-align: center;">
+                <button id="restart-btn" class="btn btn-restart">Take Quiz Again</button>
+            </div>
+      </div>
+    </div>
+  </section>
+  <script>
+  function openNav() {
+    const nav = document.getElementById('myNav');
+    if (!nav) return;
+    nav.classList.add('menu_width');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeNav() {
+    const nav = document.getElementById('myNav');
+    if (!nav) return;
+    nav.classList.remove('menu_width');
+    document.body.style.overflow = '';
+  }
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('#myNav .overlay-content a:not(.closebtn)')
+    .forEach(a => a.addEventListener('click', closeNav));
+  });
+  </script>
+
+  <script>
+  // === Same login logic as index.html (sessionStorage/localStorage 'username') ===
+  (function () {
+    const welcomeText = document.getElementById("welcomeText");
+    const who         = document.getElementById("who");
+    const loginLink   = document.getElementById("loginLink");
+    const logoutBtn   = document.getElementById("logoutBtn");
+
+    function currentUser() {
+      return sessionStorage.getItem("username") || localStorage.getItem("username");
+    }
+
+    function renderAuthUI() {
+      const user = currentUser();
+      if (user) {
+        if (who) who.textContent = user;
+        if (welcomeText) welcomeText.style.display = "inline-block";
+        if (logoutBtn) logoutBtn.style.display = "inline-block";
+        if (loginLink) loginLink.style.display = "none";
+      } else {
+        if (welcomeText) welcomeText.style.display = "none";
+        if (logoutBtn) logoutBtn.style.display = "none";
+        if (loginLink) loginLink.style.display = "inline-block";
+      }
+    }
+
+    // Logout (same behavior as index.html)
+    if (logoutBtn) {
+      logoutBtn.addEventListener("click", function () {
+        sessionStorage.removeItem("username");
+        localStorage.removeItem("username");
+        alert("Successfully logged out!");
+        window.location.href = "./logout.html";
+      });
+    }
+
+    // Gate pages that require auth (links with .auth-link)
+    document.querySelectorAll(".auth-link").forEach(a => {
+      a.addEventListener("click", (e) => {
+        if (!currentUser()) {
+          e.preventDefault();
+          const target = a.getAttribute("href") || "discover.html";
+          sessionStorage.setItem("redirect_after_login", target);
+          window.location.href = "./login.html";
+        }
+      });
+    });
+
+    renderAuthUI();
+  })();
+
+  // === Menu overlay open/close (same as discover/index) ===
+  function openNav() {
+    const nav = document.getElementById('myNav');
+    if (!nav) return;
+    nav.classList.add('menu_width');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeNav() {
+    const nav = document.getElementById('myNav');
+    if (!nav) return;
+    nav.classList.remove('menu_width');
+    document.body.style.overflow = '';
+  }
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('#myNav .overlay-content a:not(.closebtn)')
+      .forEach(a => a.addEventListener('click', closeNav));
+  });
+</script>
+
+</body>
+  <!-- jQery -->
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <!-- bootstrap js -->
+  <script src="js/bootstrap.js"></script>
+  <!-- custom js -->
+  <script src="js/custom.js"></script>
+  <!-- quiz js -->
+  <script src="js/quiz.js"></script>
+</html>

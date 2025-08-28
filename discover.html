@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <title>Discover Street Food</title>
+
+  <!-- Bootstrap + fonts/icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" />
+  <link href="https://fonts.googleapis.com/css?family=Poppins:400,600,700&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+
+  <!-- Your site styles (keep both if you use them elsewhere) -->
+  <link href="css/style.css" rel="stylesheet" />
+  <link href="css/style1.css" rel="stylesheet" />
+  <link rel="stylesheet" href="css/discover.css">
+</head>
+
+<body class="sub_page">
+  <div class="hero_area">
+  <header class="header_section">
+    <div class="container-fluid">
+      <nav class="navbar navbar-expand-lg custom_nav-container">
+        <a class="navbar-brand" href="index.html">
+          <span>TasteMYStreets</span>
+        </a>
+
+        <div class="" id="">
+          <!-- USER / AUTH UI -->
+           <div class="User_option d-flex align-items-center gap-3">
+          <!-- Welcome text (shown when logged in) -->
+           <div id="welcomeText" class="mr-3" style="display:none;">
+            Welcome, <strong id="who"></strong>
+          </div>
+
+          <!-- Login link (shown when logged out) -->
+           <a id="loginLink" href="login.html" style="display:none;">
+            <i class="fa fa-user" aria-hidden="true"></i>
+            <span>Login</span>
+          </a>
+
+          <!-- Logout button (shown when logged in) -->
+           <button id="logoutBtn" class="btn btn-sm btn-outline-light" style="display:none;">
+            Logout
+          </button>
+          <!-- optional search -->
+           <form class="form-inline ml-3">
+                <!-- search removed -->
+          </form>
+        </div>
+        
+        <!-- menu -->
+         <div class="custom_menu-btn">
+          <button onclick="openNav()">
+            <img src="images/menu.png" alt="">
+          </button>
+        </div>
+        <div id="myNav" class="overlay">
+          <div class="overlay-content">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
+            <a href="index.html">Home</a>
+            <a href="discover.html" class="auth-link">Discover Street food</a>
+            <a href="rank.html">Top 10 street food spots</a>
+            <a href="quiz.html" class="auth-link">Quiz</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact Us Page</a>
+          </div>
+        </div>
+
+      </div>
+
+      </nav>
+    </div>
+  </header>
+</div>
+
+
+  <section class="about_section layout_padding">
+    <div class="container-fluid">
+      <div class="heading_container">
+        <h2>Discover Street Food</h2>
+        <p class="intro-text">Explore Malaysia's vibrant street food culture from all 13 states! Click on each state to discover their signature dishes.</p>
+      </div>
+      
+      <div class="states-grid">
+        <!-- Johor -->
+        <div class="state-card" onclick="toggleState(this)">
+          <div class="state-header">
+            <h3 class="state-name">Johor</h3>
+            <div class="state-flag">JHR</div>
+            <i class="fas fa-chevron-down expand-icon"></i>
+          </div>
+          <p class="summary-text">Famous for its royal cuisine and rich Malay flavors</p>
+          <div class="food-list">
+            <div class="food-item" onclick="showFoodDetails(event, 'laksa-johor')">
+              <img src="https://resepichenom.com/images/recipes/5f8e4ed20350bffb0a51f2b2c870b9a2aabf3da8.jpeg" alt="Laksa Johor" class="food-image">
+              <div class="food-name">Laksa Johor</div>
+              <div class="food-description">Thick white noodles in rich coconut gravy with fish and prawns</div>
+            </div>
+            <div class="food-item" onclick="showFoodDetails(event, 'otak-otak')">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGAvWRi8RLF74UfbOppQSV0EZ_KyMVtSENJg&s" alt="Otak-Otak" class="food-image">
+              <div class="food-name">Otak-Otak</div>
+              <div class="food-description">Grilled fish paste wrapped in coconut leaves</div>
+            </div>
+            <div class="food-item" onclick="showFoodDetails(event, 'mee-rebus-johor')">
+              <img src="https://resepichenom.com/images/recipes/0785eba82048d256de78dfb6f4964c79b283a8c9.jpeg" alt="Mee Rebus Johor" class="food-image">
+              <div class="food-name">Mee Rebus Johor</div>
+              <div class="food-description">Yellow noodles in thick, sweet potato-based gravy</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Kedah -->
+        <div class="state-card" onclick="toggleState(this)">
+          <div class="state-header">
+            <h3 class="state-name">Kedah</h3>
+            <div class="state-flag">KDH</div>
+            <i class="fas fa-chevron-down expand-icon"></i>
+          </div>
+          <p class="summary-text">Known as Malaysia's rice bowl with authentic Malay dishes</p>
+           <div class="food-list">
+            <div class="food-item" onclick="showFoodDetails(event, 'laksa-kedah')">
+              <img src="https://images.deliveryhero.io/image/fd-my/LH/hb1w-listing.jpg" alt="Laksa Kedah" class="food-image">
+              <div class="food-name">Laksa Kedah</div>
+              <div class="food-description">Fish-based laksa with tamarind and thick rice noodles</div>
+            </div>
+            <div class="food-item" onclick="showFoodDetails(event, 'nasi-ulam')">
+              <img src="https://jackiem.com.au/wpinstall/wp-content/uploads/2015/05/20141125_175812-e1430736211578.jpg" alt="Nasi Ulam" class="food-image">
+              <div class="food-name">Nasi Ulam</div>
+              <div class="food-description">Rice mixed with various herbs and vegetables</div>
+            </div>
+            <div class="food-item" onclick="showFoodDetails(event, 'gulai-tempoyak')">
+              <img src="https://i.ytimg.com/vi/Q_TWMzXkbF4/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLDir7G1H0XyjaeWfqoZiV9kP12mEg" alt="Gulai Tempoyak" class="food-image">
+              <div class="food-name">Gulai Tempoyak</div>
+              <div class="food-description">Curry made with fermented durian</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Kelantan -->
+        <div class="state-card" onclick="toggleState(this)">
+          <div class="state-header">
+            <h3 class="state-name">Kelantan</h3>
+            <div class="state-flag">KEL</div>
+            <i class="fas fa-chevron-down expand-icon"></i>
+          </div>
+          <p class="summary-text">The cultural heart of Malaysia with unique traditional dishes</p>
+            <div class="food-list">
+            <div class="food-item" onclick="showFoodDetails(event, 'nasi-kerabu')">
+              <img src="https://www.justasdelish.com/wp-content/uploads/2013/04/NasiKerabu1.jpg" alt="Nasi Kerabu" class="food-image">
+              <div class="food-name">Nasi Kerabu</div>
+              <div class="food-description">Blue rice served with various herbs and side dishes</div>
+            </div>
+            <div class="food-item" onclick="showFoodDetails(event, 'ayam-percik')">
+              <img src="https://resepichenom.com/images/recipes/7d3fcaf29b334b3aa47d2d27127297470fff0351.jpeg" alt="Ayam Percik" class="food-image">
+              <div class="food-name">Ayam Percik</div>
+              <div class="food-description">Grilled chicken with coconut milk and spices</div>
+            </div>
+            <div class="food-item" onclick="showFoodDetails(event, 'solok-lada')">
+              <img src="https://cdn.rasa.my/rasa/20258109_1563858153647162_6876066516225051035_n.jpg" alt="Solok Lada" class="food-image">
+              <div class="food-name">Solok Lada</div>
+              <div class="food-description">Stuffed chilies with fish paste</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Malacca -->
+        <div class="state-card" onclick="toggleState(this)">
+          <div class="state-header">
+            <h3 class="state-name">Malacca</h3>
+            <div class="state-flag">MLK</div>
+            <i class="fas fa-chevron-down expand-icon"></i>
+          </div>
+          <p class="summary-text">Historic city with unique Peranakan and Portuguese influences</p>
+            <div class="food-list">
+            <div class="food-item" onclick="showFoodDetails(event, 'chicken-rice-balls')">
+              <img src="https://images.getrecipekit.com/20210915163813-malaysian-chicken-rice-balls.jpg?aspect_ratio=4:3&quality=90&" alt="Chicken Rice Balls" class="food-image">
+              <div class="food-name">Chicken Rice Balls</div>
+              <div class="food-description">Hainanese chicken with rice shaped into balls</div>
+            </div>
+            <div class="food-item" onclick="showFoodDetails(event, 'cendol')">
+              <img src="https://img.lazcdn.com/g/p/9960062f4d8e46930c387b5f069634ec.jpg_720x720q80.jpg" alt="Cendol" class="food-image">
+              <div class="food-name">Cendol</div>
+              <div class="food-description">Shaved ice dessert with green rice flour jelly</div>
+            </div>
+            <div class="food-item" onclick="showFoodDetails(event, 'satay-celup')">
+              <img src="https://tourismmelaka.com/wp-content/uploads/2023/11/capitol-satay-celup2-1024x1024.jpg" alt="Satay Celup" class="food-image">
+              <div class="food-name">Satay Celup</div>
+              <div class="food-description">Skewered items dipped in peanut sauce hot pot style</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Negeri Sembilan -->
+        <div class="state-card" onclick="toggleState(this)">
+          <div class="state-header">
+            <h3 class="state-name">Negeri Sembilan</h3>
+            <div class="state-flag">N9</div>
+            <i class="fas fa-chevron-down expand-icon"></i>
+          </div>
+          <p class="summary-text">Minangkabau heritage with spicy and flavorful dishes</p>
+            <div class="food-list">
+            <div class="food-item" onclick="showFoodDetails(event, 'rendang-daging')">
+              <img src="https://i.ytimg.com/vi/MNkyy5_WxqA/maxresdefault.jpg" alt="Rendang Daging" class="food-image">
+              <div class="food-name">Rendang Daging</div>
+              <div class="food-description">Slow-cooked beef in coconut milk and spices</div>
+            </div>
+            <div class="food-item" onclick="showFoodDetails(event, 'masak-lemak-cili-api')">
+              <img src="https://resepichenom.com/images/recipes/Ayam_Masak_Lemak_Cili_Api_Web.jpg" alt="Masak Lemak Cili Api" class="food-image">
+              <div class="food-name">Masak Lemak Cili Api</div>
+              <div class="food-description">Vegetables cooked in coconut milk with bird's eye chilies</div>
+            </div>
+            <div class="food-item" onclick="showFoodDetails(event, 'serunding')">
+              <img src="https://prod-wasep-uploads.sgp1.cdn.digitaloceanspaces.com/uploads/product/image/157829/96ccb9bd-f4e3-4c4c-9aae-ae94fd41da90.webp" alt="Serunding" class="food-image">
+              <div class="food-name">Serunding</div>
+              <div class="food-description">Dried meat floss with coconut and spices</div>
+            </div>
+          </div>
+        </div>
+
+         <!-- Pahang -->
+        <div class="state-card" onclick="toggleState(this)">
+          <div class="state-header">
+            <h3 class="state-name">Pahang</h3>
+            <div class="state-flag">PHG</div>
+            <i class="fas fa-chevron-down expand-icon"></i>
+          </div>
+          <p class="summary-text">Largest state with diverse culinary traditions</p>
+            <div class="food-list">
+            <div class="food-item" onclick="showFoodDetails(event, 'ikan-patin-masak-tempoyak')">
+              <img src="https://cdn.rasa.my/2022/02/79405917_121205236022244_3684484501427191808_n.jpg" alt="Ikan Patin Masak Tempoyak" class="food-image">
+              <div class="food-name">Ikan Patin Masak Tempoyak</div>
+              <div class="food-description">Patin fish curry with fermented durian</div>
+            </div>
+            <div class="food-item" onclick="showFoodDetails(event, 'gulai-kawah')">
+              <img src="https://resepichenom.com/images/recipes/Gulai_Daging_Kawah.jpg" alt="Gulai Kawah" class="food-image">
+              <div class="food-name">Gulai Kawah</div>
+              <div class="food-description">Mixed vegetable curry cooked in large pot</div>
+            </div>
+            <div class="food-item" onclick="showFoodDetails(event, 'abc-bandung')">
+              <img src="https://img-global.cpcdn.com/recipes/6be82a701b492262/680x781f0.5_0.500637_1.0q80/ais-kacang-abc-air-batu-campur-resipi-foto-utama.jpg" alt="ABC Bandung" class="food-image">
+              <div class="food-name">ABC Bandung</div>
+              <div class="food-description">Shaved ice with rose syrup and condensed milk</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Penang -->
+        <div class="state-card" onclick="toggleState(this)">
+          <div class="state-header">
+            <h3 class="state-name">Penang</h3>
+            <div class="state-flag">PNG</div>
+            <i class="fas fa-chevron-down expand-icon"></i>
+          </div>
+          <p class="summary-text">UNESCO World Heritage site famous for street food</p>
+            <div class="food-list">
+            <div class="food-item" onclick="showFoodDetails(event, 'char-koay-teow')">
+              <img src="https://resepichenom.com/images/recipes/Char_kuetiau_1.jpg" alt="Char Koay Teow" class="food-image">
+              <div class="food-name">Char Koay Teow</div>
+              <div class="food-description">Stir-fried flat rice noodles with prawns and Chinese sausage</div>
+            </div>
+            <div class="food-item" onclick="showFoodDetails(event, 'assam-laksa')">
+              <img src="https://3.bp.blogspot.com/-GjfaSKMCMKs/Tnf51by8-MI/AAAAAAAACZY/6JcsB62LeXQ/s1600/Penang+asam+laksa.JPG" alt="Assam Laksa" class="food-image">
+              <div class="food-name">Assam Laksa</div>
+              <div class="food-description">Sour fish-based noodle soup with tamarind</div>
+            </div>
+            <div class="food-item" onclick="showFoodDetails(event, 'rojak')">
+              <img src="https://thefoodsite.net/wp-content/uploads/2020/04/rojak.jpg" alt="Rojak" class="food-image">
+              <div class="food-name">Rojak</div>
+              <div class="food-description">Mixed fruit and vegetable salad with palm sugar dressing</div>
+            </div>
+          </div>
+        </div>
+
+         <!-- Perak -->
+        <div class="state-card" onclick="toggleState(this)">
+          <div class="state-header">
+            <h3 class="state-name">Perak</h3>
+            <div class="state-flag">PRK</div>
+            <i class="fas fa-chevron-down expand-icon"></i>
+          </div>
+          <p class="summary-text">Famous for bean sprouts and tin mining heritage cuisine</p>
+            <div class="food-list">
+           <div class="food-item" onclick="showFoodDetails(event, 'ipoh-hor-fun')">
+              <img src="https://cdn1.sgliteasset.com/ipohkueh/images/texteditor/IKT_Sha_Hor_Fun_1736222594.jpg" alt="Ipoh Hor Fun" class="food-image">
+              <div class="food-name">Ipoh Hor Fun</div>
+              <div class="food-description">Flat rice noodles in clear chicken broth</div>
+            </div>
+            <div class="food-item" onclick="showFoodDetails(event, 'tau-fu-fah')">
+              <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2b/6b/5d/8c/caption.jpg?w=1200&h=1200&s=1" alt="Tau Fu Fah" class="food-image">
+              <div class="food-name">Tau Fu Fah</div>
+              <div class="food-description">Silky smooth tofu pudding with syrup</div>
+            </div>
+            <div class="food-item" onclick="showFoodDetails(event, 'ipoh-bean-sprouts-chicken')">
+              <img src="https://media-cdn.tripadvisor.com/media/photo-s/0d/af/a2/84/chicken-rice-and-bean.jpg" alt="Ipoh Bean Sprouts Chicken" class="food-image">
+              <div class="food-name">Ipoh Bean Sprouts Chicken</div>
+              <div class="food-description">Poached chicken with famous Ipoh bean sprouts</div>
+            </div>
+          </div>
+        </div>
+
+         <!-- Perlis -->
+        <div class="state-card" onclick="toggleState(this)">
+          <div class="state-header">
+            <h3 class="state-name">Perlis</h3>
+            <div class="state-flag">PLS</div>
+            <i class="fas fa-chevron-down expand-icon"></i>
+          </div>
+          <p class="summary-text">Smallest state with simple but delicious local dishes</p>
+            <div class="food-list">
+            <div class="food-item" onclick="showFoodDetails(event, 'laksa-perlis')">
+              <img src="https://myweekendplan.asia/wp-content/uploads/2022/01/kuala-perlis-laksa-2.jpg" alt="Laksa Perlis" class="food-image">
+              <div class="food-name">Laksa Perlis</div>
+              <div class="food-description">Fish-based laksa with unique local herbs</div>
+            </div>
+            <div class="food-item" onclick="showFoodDetails(event, 'jeruk-mangga')">
+              <img src="https://dailymakan.com/wp-content/uploads/2020/07/real-format-3.jpg" alt="Jeruk Mangga" class="food-image">
+              <div class="food-name">Jeruk Mangga</div>
+              <div class="food-description">Pickled mango with palm sugar and chili</div>
+            </div>
+            <div class="food-item" onclick="showFoodDetails(event, 'harumanis')">
+              <img src="https://cdn.onpay.my/users/ammararich/media/uploads/harum%20manis.jpg" alt="Harumanis" class="food-image">
+              <div class="food-name">Harumanis</div>
+              <div class="food-description">Premium mango variety unique to Perlis</div>
+            </div>
+          </div>
+        </div>
+
+         <!-- Sabah -->
+        <div class="state-card" onclick="toggleState(this)">
+          <div class="state-header">
+            <h3 class="state-name">Sabah</h3>
+            <div class="state-flag">SBH</div>
+            <i class="fas fa-chevron-down expand-icon"></i>
+          </div>
+          <p class="summary-text">Land below the wind with diverse indigenous cuisines</p>
+            <div class="food-list">
+            <div class="food-item" onclick="showFoodDetails(event, 'hinava')">
+              <img src="https://www.unileverfoodsolutions.com.my/dam/global-ufs/mcos/SEA/calcmenu/recipes/MY-recipes/fish-&-other-seafood-dishes/hinava/main-header.jpg" alt="Hinava" class="food-image">
+              <div class="food-name">Hinava</div>
+              <div class="food-description">Raw fish salad marinated with lime and chili</div>
+            </div>
+            <div class="food-item" onclick="showFoodDetails(event, 'bosou')">
+              <img src="https://munchmalaysia.com/wp-content/uploads/2023/11/bosou-1.jpg" alt="Bosou" class="food-image">
+              <div class="food-name">Bosou</div>
+              <div class="food-description">Fermented fish with rice and salt</div>
+            </div>
+            <div class="food-item" onclick="showFoodDetails(event, 'beaufort-mee')">
+              <img src="https://www.mysabah.com/wordpress/wp-content/uploads/2024/01/20240119_7.jpg" alt="Beaufort Mee" class="food-image">
+              <div class="food-name">Beaufort Mee</div>
+              <div class="food-description">Handmade noodles in clear pork broth</div>
+            </div>
+          </div>
+        </div> 
+
+         <!-- Sarawak -->
+        <div class="state-card" onclick="toggleState(this)">
+          <div class="state-header">
+            <h3 class="state-name">Sarawak</h3>
+            <div class="state-flag">SWK</div>
+            <i class="fas fa-chevron-down expand-icon"></i>
+          </div>
+          <p class="summary-text">Largest state with rich Dayak and Chinese influences</p>
+            <div class="food-list">
+            <div class="food-item" onclick="showFoodDetails(event, 'sarawak-laksa')">
+              <img src="https://i0.wp.com/theboywhoatetheworld.com/wp-content/uploads/2017/08/poh-lam-chong-choon-laksa-2.jpg?w=616&h=617&ssl=1" alt="Sarawak Laksa" class="food-image">
+              <div class="food-name">Sarawak Laksa</div>
+              <div class="food-description">Spicy coconut-based laksa with prawns and herbs</div>
+            </div>
+            <div class="food-item" onclick="showFoodDetails(event, 'kolo-mee')">
+              <img src="https://magazine.foodpanda.my/wp-content/uploads/sites/23/2020/03/cropped-Sarawak-Kolo-Mee.jpg" alt="Kolo Mee" class="food-image">
+              <div class="food-name">Kolo Mee</div>
+              <div class="food-description">Dry noodles with minced pork and char siu</div>
+            </div>
+            <div class="food-item" onclick="showFoodDetails(event, 'manok-pansoh')">
+              <img src="https://assets.hmetro.com.my/images/articles/suh7_1714775417.jpg" alt="Manok Pansoh" class="food-image">
+              <div class="food-name">Manok Pansoh</div>
+              <div class="food-description">Chicken cooked in bamboo with herbs</div>
+            </div>
+          </div>
+        </div>
+
+         <!-- Selangor -->
+        <div class="state-card" onclick="toggleState(this)">
+          <div class="state-header">
+            <h3 class="state-name">Selangor</h3>
+            <div class="state-flag">SEL</div>
+            <i class="fas fa-chevron-down expand-icon"></i>
+          </div>
+          <p class="summary-text">Most developed state with diverse urban street food</p>
+            <div class="food-list">
+            <div class="food-item" onclick="showFoodDetails(event, 'bak-kut-teh')">
+              <img src="https://c4.staticflickr.com/6/5662/30084731675_a8ff2d36bc_o.jpg" alt="Bak Kut Teh" class="food-image">
+              <div class="food-name">Bak Kut Teh</div>
+              <div class="food-description">Pork ribs soup with Chinese herbs</div>
+            </div>
+            <div class="food-item" onclick="showFoodDetails(event, 'yong-tau-foo')">
+              <img src="https://jackiem.com.au/wpinstall/wp-content/uploads/2022/02/ampang-yong-tau-foo-stuffed-fish-vegetables-e1644123877381.jpg" alt="Yong Tau Foo" class="food-image">
+              <div class="food-name">Yong Tau Foo</div>
+              <div class="food-description">Stuffed tofu and vegetables with fish paste</div>
+            </div>
+            <div class="food-item" onclick="showFoodDetails(event, 'chee-cheong-fun')">
+              <img src="https://i.ytimg.com/vi/c2o7_M9vSIo/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLAGexz5uP04BiB4nyDCn6DWwrZUUQ" alt="Chee Cheong Fun" class="food-image">
+              <div class="food-name">Chee Cheong Fun</div>
+              <div class="food-description">Stuffed tofu and vegetables with fish paste</div>
+            </div>
+          </div>
+        </div>
+
+         <!-- Terengganu -->
+        <div class="state-card" onclick="toggleState(this)">
+          <div class="state-header">
+            <h3 class="state-name">Terengganu</h3>
+            <div class="state-flag">TRG</div>
+            <i class="fas fa-chevron-down expand-icon"></i>
+          </div>
+          <p class="summary-text">East coast state with fresh seafood and coconut-based dishes</p>
+            <div class="food-list">
+            <div class="food-item" onclick="showFoodDetails(event, 'nasi-dagang')">
+              <img src="https://i.ytimg.com/vi/-KGxOTHSHcs/sddefault.jpg" alt="Nasi Dagang" class="food-image">
+              <div class="food-name">Nasi Dagang</div>
+              <div class="food-description">Rice cooked with coconut milk served with fish curry</div>
+            </div>
+            <div class="food-item" onclick="showFoodDetails(event, 'keropok-lekor')">
+              <img src="https://www.tasteatlas.com/images/dishes/576460f5d7c04f34bde13783e77b6f64.jpg" alt="Keropok Lekor" class="food-image">
+              <div class="food-name">Keropok Lekor</div>
+              <div class="food-description">Fish crackers served with spicy dipping sauce</div>
+            </div>
+            <div class="food-item" onclick="showFoodDetails(event, 'satar')">
+              <img src="https://www.discoveryterengganu.com/wp-content/uploads/2024/05/4-1.jpg" alt="Satar" class="food-image">
+              <div class="food-name">Satar</div>
+              <div class="food-description">Grilled fish cake wrapped in coconut leaves</div>
+            </div>
+          </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Food Detail Modal -->
+  <div id="foodModal" class="food-modal">
+    <div class="modal-content">
+      <span class="close-modal" onclick="closeModal()">&times;</span>
+      <div class="modal-header">
+        <img id="modalFoodImage" src="" alt="Food Image" class="modal-header-image">
+        <div class="modal-header-overlay">
+          <h2 id="modalFoodName" class="modal-food-name"></h2>
+          <p id="modalFoodOrigin" class="modal-food-origin"></p>
+        </div>
+      </div>
+      <div class="modal-body">
+        <div class="modal-section">
+          <h3 class="modal-section-title">Description</h3>
+          <p id="modalFoodDescription" class="modal-section-content"></p>
+        </div>
+        <div class="modal-section">
+          <h3 class="modal-section-title">History</h3>
+          <p id="modalFoodHistory" class="modal-section-content"></p>
+        </div>
+        <div class="modal-section">
+          <h3 class="modal-section-title">Ingredients</h3>
+          <ul id="modalFoodIngredients" class="modal-section-content ingredients-list"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+  <script src="js/discover.js"></script>
+  <!-- Your auth logic (cookies → sessionStorage, gatekeeping, logout, toggleHeaderUI) -->
+  <script src="js/script.js" defer></script>
+
+  <script>
+  function openNav() {
+    var nav = document.getElementById('myNav');
+    if (!nav) return;
+    nav.classList.add('menu_width');    // <-- this makes links visible (opacity:1)
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeNav() {
+    var nav = document.getElementById('myNav');
+    if (!nav) return;
+    nav.classList.remove('menu_width'); // <-- hide overlay and return links to opacity:0
+    document.body.style.overflow = '';
+  }
+
+  // Optional: close when a link is clicked
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('#myNav .overlay-content a:not(.closebtn)')
+      .forEach(a => a.addEventListener('click', closeNav));
+  });
+</script>
+
+
+
+</body>
+</html>

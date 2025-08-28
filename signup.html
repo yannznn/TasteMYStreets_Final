@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sign Up</title>
+  <link href="css/style1.css" rel="stylesheet" />
+</head>
+<body>
+  <main class="page">
+    <section class="card" aria-labelledby="signupTitle">
+      <h1 class="title" id="signupTitle">Create Account</h1>
+
+      <form id="signupForm" novalidate>
+        <label class="field">
+          <span>Username</span>
+          <input id="suUsername" name="username" type="text" required />
+        </label>
+
+        <label class="field">
+          <span>Password</span>
+          <input id="suPassword" name="password" type="password" required />
+        </label>
+
+        <label class="field">
+          <span>Confirm Password</span>
+          <input id="suConfirm" name="confirm" type="password" required />
+        </label>
+
+        <button type="submit" class="btn primary">Sign Up</button>
+        <p id="signupError" class="error" aria-live="polite"></p>
+      </form>
+
+      <div id="deleteUserSection">
+        <h2>Delete Account</h2>
+        <label for="deleteUsername">Enter Username to Delete</label>
+        <input id="deleteUsername" type="text" />
+        <button id="deleteUserBtn" class="btn danger">Delete Account</button>
+        <p id="deleteError" class="error"></p>
+      </div>
+
+      <p class="hint">Already have an account? <a href="./login.html">Login</a></p>
+    </section>
+  </main>
+
+  <script src="js/script.js" defer></script>
+</body>
+</html>

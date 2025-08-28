@@ -1,0 +1,501 @@
+* {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+    }
+
+    .hero_area {
+      background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+      min-height: 80px;
+    }
+
+    .header_section {
+      padding: 15px 0;
+    }
+
+    .navbar-brand {
+      color: white !important;
+      font-weight: 700;
+      font-size: 1.8rem;
+      text-decoration: none;
+    }
+
+    .navbar-brand span {
+      color: #ffd700;
+    }
+
+    .custom_nav-container {
+      justify-content: space-between;
+    }
+
+    .User_option a {
+      color: white;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 20px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 25px;
+      transition: all 0.3s ease;
+    }
+
+    .User_option a:hover {
+      background: rgba(255, 255, 255, 0.2);
+      transform: translateY(-2px);
+    }
+
+    .custom_menu-btn button {
+      background: none;
+      border: none;
+      color: white;
+      font-size: 1.5rem;
+      margin-left: 15px;
+    }
+
+    /* Full-screen overlay starts closed */
+    .overlay {
+      position: fixed;
+      top: 0; left: 0;
+      width: 0;                 /* openNav() sets to 100% */
+      height: 100vh;
+      background: rgba(0,0,0,0.95);
+      overflow-x: hidden;
+      transition: width .4s ease;
+      z-index: 9999;
+    }
+
+    /* Centered list */
+    .overlay-content {
+      position: relative;
+      top: 20%;
+      width: 100%;
+      text-align: center;
+    }
+
+    /* Force visible menu items on dark background */
+    .overlay-content a {
+      display: block;
+      padding: 15px;
+      font-size: 24px;
+      font-weight: 600;
+      color: #fff !important;       /* ensure white text */
+      text-decoration: none;
+      transition: transform .3s ease, color .3s ease;
+    }
+
+    .overlay-content a:hover {
+      color: #ffd700 !important;
+      transform: scale(1.08);
+    }
+
+    /* Close “X” */
+    .closebtn {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      font-size: 60px;
+      color: #fff !important;
+      text-decoration: none;
+    }
+
+
+    .header_section { position: relative; z-index: 500; }
+    /* Welcome text */
+    .header_section .User_option #welcomeText { color: #fff; font-weight: 500; }
+    .header_section .User_option #welcomeText strong { font-weight: 700; }
+
+    /* Logout chip (filled pill) */
+    .header_section .User_option #logoutBtn {
+      appearance: none; -webkit-appearance: none;
+      background: rgba(255,255,255,0.85);
+      color: #5a6491;
+      border: none;
+      border-radius: 16px;
+      padding: 8px 18px;
+      line-height: 1;
+      font-weight: 600;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+      cursor: pointer;
+    }
+    .header_section .User_option #logoutBtn:hover,
+    .header_section .User_option #logoutBtn:focus {
+      background: #fff;
+      outline: none;
+    }
+
+    /* Optional: make the login link look like a light chip on hover */
+    .header_section .User_option a#loginLink {
+      background: rgba(255,255,255,0.10);
+      color: #fff;
+      border-radius: 16px;
+      padding: 8px 14px;
+    }
+    .header_section .User_option a#loginLink:hover { background: rgba(255,255,255,0.20); }
+
+    .about_section {
+      padding: 60px 0;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: calc(100vh - 80px);
+    }
+
+    .heading_container {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .heading_container h2 {
+      color: white;
+      font-weight: 700;
+      font-size: 2.5rem;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+      margin-bottom: 20px;
+    }
+
+    .intro-text {
+      color: white;
+      font-size: 1.2rem;
+      text-align: center;
+      margin-bottom: 40px;
+      opacity: 0.9;
+    }
+
+    .states-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
+      padding: 20px;
+    }
+    
+    .state-card {
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 20px;
+      padding: 25px;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+      transition: all 0.3s ease;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+    }
+    
+
+    .state-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.2), transparent);
+      transition: left 0.5s;
+    }
+
+    .state-card:hover::before {
+      left: 100%;
+    }
+
+    .state-card:hover {
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+    }
+
+    .state-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+      border-bottom: 2px solid #ffd700;
+      padding-bottom: 15px;
+    }
+
+    .state-name {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #333;
+      margin: 0;
+    }
+
+    .state-flag {
+      width: 40px;
+      height: 30px;
+      background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+      border-radius: 5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: bold;
+      font-size: 0.8rem;
+    }
+
+    .food-list {
+      display: none;
+      animation: fadeIn 0.5s ease-in;
+    }
+
+    .food-list.active {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .food-item {
+      background: linear-gradient(135deg, #ffeaa7, #fdcb6e);
+      margin: 10px 0;
+      padding: 15px;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .food-item:hover {
+      transform: scale(1.03);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    .food-image {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .food-name {
+      font-weight: 600;
+      color: #2d3436;
+      font-size: 1.1rem;
+      margin-bottom: 8px;
+    }
+
+    .food-description {
+      color: #636e72;
+      font-size: 0.95rem;
+      line-height: 1.4;
+    }
+
+    .expand-icon {
+      transition: transform 0.3s ease;
+      color: #ffd700;
+      font-size: 1.5rem;
+    }
+
+    .state-card.expanded .expand-icon {
+      transform: rotate(180deg);
+    }
+
+    .summary-text {
+      color: #666;
+      font-size: 1rem;
+      line-height: 1.5;
+      margin-top: 10px;
+    }
+
+    /* Food Modal Styles */
+    .food-modal {
+      display: none;
+      position: fixed;
+      z-index: 2000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.8);
+      animation: fadeIn 0.3s;
+    }
+
+    .modal-content {
+      position: relative;
+      background-color: #fff;
+      margin: 5% auto;
+      padding: 0;
+      width: 90%;
+      max-width: 800px;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      animation: slideIn 0.4s;
+    }
+
+    @keyframes slideIn {
+      from {transform: translateY(-50px); opacity: 0;}
+      to {transform: translateY(0); opacity: 1;}
+    }
+
+    .close-modal {
+      position: absolute;
+      top: 15px;
+      right: 25px;
+      color: #fff;
+      font-size: 35px;
+      font-weight: bold;
+      cursor: pointer;
+      z-index: 10;
+      text-shadow: 0 2px 5px rgba(0,0,0,0.5);
+    }
+
+    .close-modal:hover {
+      color: #ffd700;
+    }
+
+    .modal-header {
+      position: relative;
+      height: 250px;
+      overflow: hidden;
+      border-top-left-radius: 15px;
+      border-top-right-radius: 15px;
+    }
+
+    .modal-header-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .modal-header-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+      padding: 20px;
+      color: white;
+    }
+
+    .modal-food-name {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 5px;
+    }
+
+    .modal-food-origin {
+      font-size: 1.1rem;
+      opacity: 0.9;
+    }
+
+    .modal-body {
+      padding: 25px;
+    }
+
+    .modal-section {
+      margin-bottom: 20px;
+    }
+
+    .modal-section-title {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: #ee5a24;
+      margin-bottom: 10px;
+      border-bottom: 2px solid #ffd700;
+      padding-bottom: 5px;
+    }
+
+    .modal-section-content {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    .ingredients-list {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    .ingredients-list li {
+      padding: 5px 0;
+      border-bottom: 1px dashed #eee;
+      display: flex;
+      align-items: center;
+    }
+
+    .ingredients-list li:before {
+      content: "•";
+      color: #ee5a24;
+      font-weight: bold;
+      margin-right: 10px;
+    }
+
+    @media (max-width: 768px) {
+      .states-grid {
+        grid-template-columns: 1fr;
+        padding: 10px;
+      }
+      
+      .heading_container h2 {
+        font-size: 2rem;
+      }
+      
+      .state-card {
+        padding: 20px;
+      }
+      
+      .modal-content {
+        width: 95%;
+        margin: 10% auto;
+      }
+      
+      .modal-header {
+        height: 200px;
+      }
+      
+      .modal-food-name {
+        font-size: 1.6rem;
+      }
+    }
+
+    #myNav.overlay {
+      position: fixed;
+      inset: 0;
+      height: 100vh;
+      width: 0;  
+      background: rgba(0,0,0,0.92);
+      overflow: auto;
+      transition: width .35s ease;
+      z-index: 100000 !important;
+      display: flex; 
+      align-items: center;
+      justify-content: center;
+    }
+
+    #myNav .overlay-content {
+      position: static;
+      width: auto;
+      margin: 0;
+      text-align: center;
+    }
+
+    #myNav .overlay-content a {
+      display: block;
+      padding: 12px 0;
+      font-size: 26px;
+      font-weight: 700;
+      color: #fff !important;
+      text-decoration: none;
+      transition: transform .25s ease, color .25s ease;
+    }
+
+    #myNav .overlay-content a:hover {
+      color: #ffd700 !important;
+      transform: scale(1.06);
+    }
+
+    .header_section { position: relative; z-index: 500; }
+
+    #myNav.overlay.menu_width { 
+      width: 100%;
+    }
+
+    #myNav.overlay.menu_width a {
+      opacity: 1;
+    }
